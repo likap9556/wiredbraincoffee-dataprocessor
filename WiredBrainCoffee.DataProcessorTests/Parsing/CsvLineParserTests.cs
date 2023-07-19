@@ -6,7 +6,7 @@ public class CsvLineParserTests
     public void ShouldParseValidLine()
     {
         // Arrange.
-        string[] csvLines = new[] { "Espresso;27/10/2022 8:01:16" };
+        string[] csvLines = new[] { "Espresso;10/10/2022 10:10:16" };
 
         // Act.
         var machineDataItems = CsvLineParser.Parse(csvLines);
@@ -15,7 +15,7 @@ public class CsvLineParserTests
         Assert.NotNull(machineDataItems);
         Assert.Single(machineDataItems);
         Assert.Equal("Espresso", machineDataItems[0].CoffeeType);
-        Assert.Equal(new DateTime(2022, 10, 27, 8, 1, 16), machineDataItems[0].CreatedAt);
+        Assert.Equal(new DateTime(2022, 10, 10, 10, 10, 16), machineDataItems[0].CreatedAt);
     }
 
     [Fact]
